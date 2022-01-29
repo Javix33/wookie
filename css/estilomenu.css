@@ -1,17 +1,4 @@
-@import "variables";
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  font-family: star;
-}
-
-@font-face {
-  font-family: star;
-  src: url(../resources/fuente/Starjedi.ttf);
-}
-
-$icon-size:20vw;
+$icon-size:80px;
 $w: 300px;
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 @mixin lightsaber($color) {
@@ -21,6 +8,15 @@ $w: 300px;
     box-shadow: $color 0px 0px 20px 2px;
     text-shadow: $color 0px 0px 6px, $color 0px 0px 10px;
   }
+}
+
+html,
+body {
+  background: #222;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 #container {
@@ -121,24 +117,16 @@ $w: 300px;
   }
 }
 
-.menu__mobile {
-  @media screen and(min-width: 580px) {
-    transform: translatex(-500%);
-  }
-  margin-top: 10%;
+nav {
   &.show {
-    transform: translatex(-10%);
-    @media screen and(min-width: 580px) {
-      transform: translatex(-100%);
-    }
+    transform: translatex(0%);
   }
-  height: fit-content;
   font-family:Open Sans;
   color:white;
   background:#111;
   position:absolute;
-  transform:translatex(-200%);
-  transition:transform 0.5s ease;
+  transform:translatex(-100%);
+  transition:transform 0.2s ease;
   top:$icon-size;
   bottom:0px;
   padding-right:16px;
@@ -216,84 +204,5 @@ $w: 300px;
   }
   to {
     Opacity: 1;
-  }
-}
-
-body {
-  background-image: url(../resources/imagenes/bg/universo_negro.png);
-  background-size: cover;
-  background-repeat: repeat;
-}
-
-//age checker
-.main {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  &__contenedor {
-    width: 50vw;
-    height: 50vh;
-    border: solid white 2px;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    background-color: rgba(0, 0, 0, .6);
-    &__titulo {
-      font-size: 5vw;
-      color: white;
-      text-align: center;
-      background-color: none;
-      opacity: 1;
-    }
-    &__botonera {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-evenly;
-      &__boton {
-        border: white solid 1px;
-        text-align: center;
-        color: white;
-        font-size: 5vw;
-        margin: 1vw;
-      }
-    }
-  }
-}
-
-.cabecera {
-  height: 15vh;
-  width: 100%;
-  display: flex;
-  flex-direction: row-reverse;
-  align-items: center;
-  @media screen and(orientation: landscape) {
-    height: 15vw;
-  }
-  &__logo {
-    margin-right: 5%;
-    height: 13vh;
-    @media screen and(orientation: landscape) {
-      width: 12vw;
-      height: auto;
-    }
-  }
-  &__vinculo {
-    background-color: white;
-  }
-}
-
-//productos
-.mainp {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  &__titulo {
-    color: white;
-    font-size: $ti;
   }
 }
