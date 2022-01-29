@@ -4,6 +4,8 @@
   margin: 0;
   box-sizing: border-box;
   font-family: star;
+  letter-spacing: 2px;
+  font-weight: 300;
 }
 
 @font-face {
@@ -294,6 +296,46 @@ body {
   align-items: center;
   &__titulo {
     color: white;
-    font-size: $ti;
+    font-size: $titulomobile;
+  }
+  &__cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    &__subtitulo {
+      text-align: center;
+      font-size: $titulomobile;
+    }
+    &__linea {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      &__card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 5px;
+        &__titulo {
+          font-size: $submobile;
+        }
+        &__info {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-around;
+          &__img {
+            width: 25vw;
+            border: white solid 1px;
+            border-radius: 5px;
+            margin: 5px;
+          }
+          &__texto {
+            font-size: $textomobile;
+            margin: 5px;
+          }
+        }
+      }
+    }
   }
 }
