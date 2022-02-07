@@ -1,0 +1,86 @@
+@keyframes space-jam {
+  from {
+    background-position: 500px 70px, 0px 0px, 0px 0px, 0px 0px
+  }
+  to {
+    background-position: -500px 70px, -1390px 0px, -695px 0px, -695px 0px
+  }
+}
+
+@keyframes green-ls-in {
+  0% {
+    transform: translate(-50%, -50%) rotate(180deg);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(-90deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(-90deg) translate(200%, 0%);
+  }
+}
+
+@keyframes green-ls-out {
+  0% {
+    transform: translate(-50%, -200%) rotate(-90deg);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(-90deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(180deg);
+  }
+}
+
+@keyframes fadein {
+  from {
+    Opacity: 0;
+  }
+  to {
+    Opacity: 1;
+  }
+}
+
+@keyframes deathStar {
+  0% {
+    position: relative;
+  }
+  25% {
+    position: relative;
+    top: 2%;
+  }
+  50% {
+    position: relative;
+    top: 0;
+  }
+  75% {
+    position: relative;
+    top: -2%;
+  }
+  100% {
+    position: relative;
+    top: 0;
+  }
+}
+
+@keyframes halcon {
+  0% {
+    left: -5vw;
+    bottom: 0vh;
+  }
+  25% {
+    left: 20vw;
+    bottom: 3vh;
+  }
+  50% {
+    left: -5vw;
+    bottom: 0;
+  }
+  75% {
+    left: 22vw;
+    bottom: -3vh;
+  }
+  100% {
+    left: -5vw;
+    bottom: 0vh;
+  }
+}

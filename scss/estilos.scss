@@ -1,4 +1,5 @@
 @import "variables";
+@import "animaciones";
 * {
   padding: 0;
   margin: 0;
@@ -188,47 +189,13 @@ $w: 300px;
   }
 }
 
-@keyframes green-ls-in {
-  0% {
-    transform: translate(-50%, -50%) rotate(180deg);
-  }
-  50% {
-    transform: translate(-50%, -50%) rotate(-90deg);
-  }
-  100% {
-    transform: translate(-50%, -50%) rotate(-90deg) translate(200%, 0%);
-  }
-}
-
-@keyframes green-ls-out {
-  0% {
-    transform: translate(-50%, -200%) rotate(-90deg);
-  }
-  50% {
-    transform: translate(-50%, -50%) rotate(-90deg);
-  }
-  100% {
-    transform: translate(-50%, -50%) rotate(180deg);
-  }
-}
-
-@keyframes fadein {
-  from {
-    Opacity: 0;
-  }
-  to {
-    Opacity: 1;
-  }
-}
-
 body {
-  background-image: url(../resources/imagenes/bg/universo_negro.png);
-  background-size: cover;
-  background-repeat: repeat;
+  background: rgb(13, 0, 27);
+  background: linear-gradient(90deg, rgba(13, 0, 27, 1) 15%, rgba(72, 29, 149, 1) 51%, rgba(118, 81, 158, 1) 94%);
 }
 
 .cabecera {
-  height: 15vh;
+  height: 12vh;
   width: 100%;
   display: flex;
   flex-direction: row-reverse;
@@ -238,7 +205,7 @@ body {
   }
   &__logo {
     margin-right: 5%;
-    height: 13vh;
+    height: 10vh;
     @media screen and(orientation: landscape) {
       width: 12vw;
       height: auto;
@@ -249,9 +216,75 @@ body {
   }
 }
 
-;
+.space-box {
+  background: black;
+  box-shadow: 0px 20px 30px rgba(black, 0.2);
+  position: relative;
+  overflow: hidden;
+  background-image: url('https://res.cloudinary.com/gelsot/image/upload/v1537745472/space-box/moon.png'), url('https://res.cloudinary.com/gelsot/image/upload/v1537745468/space-box/upper-stars.png'), url('https://res.cloudinary.com/gelsot/image/upload/v1537745472/space-box/lower-stars.png'), url('https://res.cloudinary.com/gelsot/image/upload/v1537745471/space-box/blue-nebula.png');
+  background-repeat: no-repeat, repeat, repeat, repeat;
+  background-position: 500px 70px, 0px 0px, 0px 0px, 0px 0px;
+  background-blend-mode: normal, normal, normal, color-dodge;
+  animation: space-jam linear 20s infinite forwards;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
 .footer {
-  background-image: ;
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+  justify-content: space-around;
+  height: 11vh;
+  width: 100%;
+  border-top: solid 1px white;
+  &__vinculo__fb {
+    position: relative;
+    width: fit-content;
+    background-image: url(../resources/imagenes/otras/halcon.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: rotate(-90deg);
+    animation-name: halcon;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-delay: 5s;
+    &__icono {
+      width: 12vw;
+      padding: 1vw;
+      transform: rotate(90deg);
+    }
+  }
+  &__vinculo__in {
+    margin-top: 2vh;
+    width: fit-content;
+    background-image: url(../resources/imagenes/otras/deathStar.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation-name: deathStar;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-delay: 5s;
+    &__icono {
+      width: 12vw;
+      padding: 3vw;
+    }
+  }
+  &__vinculo__w {
+    position: absolute;
+    align-self: flex-end;
+    font-family: star;
+    font-size: 3vw;
+    color: white;
+    margin-bottom: 2vh;
+    -webkit-text-stroke: 1px black;
+    &__icono {
+      width: 3vh;
+      margin-right: 1vh;
+    }
+  }
 }
 
 //age checker
@@ -298,12 +331,16 @@ body {
 
 //productos
 .mainp {
+  padding-top: 2vh;
+  min-height: 75vh;
+  margin-top: 2vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   &__titulo {
     color: white;
     font-size: $titulomobile;
+    text-align: center;
   }
   &__cont {
     display: flex;
@@ -311,8 +348,10 @@ body {
     align-items: center;
     color: white;
     &__subtitulo {
+      margin: 3vh;
       text-align: center;
       font-size: $titulomobile;
+      text-decoration: underline;
     }
     &__linea {
       display: flex;
@@ -324,6 +363,7 @@ body {
         align-items: center;
         margin: 5px;
         &__titulo {
+          margin-bottom: 2vh;
           font-size: $submobile;
         }
         &__info {
@@ -346,3 +386,5 @@ body {
     }
   }
 }
+
+//distribuidores
