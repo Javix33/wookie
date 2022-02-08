@@ -148,6 +148,7 @@ $w: 300px;
   bottom:0px;
   padding-right:16px;
   width:$w;
+  z-index: 10;
   ul {
     list-style: none;
     padding: 0;
@@ -197,11 +198,16 @@ body {
 }
 
 .cabecera {
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid white;
+  position: sticky;
+  top: 0;
   height: 12vh;
   width: 100%;
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
+  z-index: 10;
   @media screen and(orientation: landscape) {
     height: 15vw;
   }
@@ -381,7 +387,7 @@ body {
           &__texto {
             font-family: $lato;
             font-size: $textomobile;
-            font-weight: 700;
+            font-weight: 1000;
             margin: 5px;
           }
         }
@@ -398,6 +404,8 @@ body {
   flex-direction: column;
   align-items: center;
   &__titulo {
+    margin-left: 1vh;
+    margin-right: 1vh;
     margin-top: 1vh;
     text-align: center;
     font-size: $titulomobile;
@@ -427,19 +435,22 @@ body {
         display: flex;
         flex-direction: row;
         align-items: center;
+        justify-items: center;
         justify-content: space-evenly;
         &__vinculo {
           width: 50%;
           text-align: center;
-          text-decoration: none;
+          text-decoration: underline;
           color: #fff;
           font-size: $submobile;
         }
         &__info {
           width: 50%;
           text-align: center;
+          text-justify: center;
           font-size: $textomobile;
-          font-family: sans-serif;
+          font-family: $lato;
+          font-weight: 1000;
         }
       }
     }
@@ -448,15 +459,17 @@ body {
 
 .sinStar {
   display: inline;
-  font-family: sans-serif;
+  font-family: $lato;
+  font-weight: 1000;
 }
 
-//nosotros
+//acerca de
 .mainn {
   display: flex;
   flex-direction: column;
   align-items: left;
   color: #fff;
+  min-height: 77vh;
   &__title {
     font-size: $titulomobile;
     align-self: center;
@@ -475,7 +488,38 @@ body {
       margin: 2vh 1vh;
     }
     &__texto {
+      font-family: $lato;
+      font-weight: 1000;
       font-size: $textomobile;
+    }
+  }
+}
+
+//contacto
+.mainc {
+  min-height: 77vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2vh;
+    &__input {
+      font-family: $lato;
+      border: none;
+      color: #fff;
+      width: 100%;
+      height: 4vh;
+      border-bottom: solid 1px #fff;
+      border-right: solid 1px #fff;
+      margin-bottom: 2vh;
+      font-size: 3vw;
+      border: none;
+       ::placeholder {
+        background: none;
+      }
     }
   }
 }
